@@ -82,7 +82,7 @@ export default function Index() {
 }
 
 function StoryComponent() {
-  const handleSubmit = (e) => {
+  const handleSubmit = ',' => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
