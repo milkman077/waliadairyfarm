@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
 
-("use client");
 
-function MainComponent({ onSubmit, loading }) {
+
+export default function Index() {
+  return (function MainComponent({ onSubmit, loading }) {
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div>
@@ -81,7 +82,7 @@ function MainComponent({ onSubmit, loading }) {
 }
 
 function StoryComponent() {
-  const handleSubmit = (e) => {
+  const handleSubmit = ',' => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
@@ -101,6 +102,5 @@ function StoryComponent() {
       </div>
     </div>
   );
+});
 }
-
-export default MainComponent;
