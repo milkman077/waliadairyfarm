@@ -78,7 +78,7 @@ export default function Index() {
         {loading ? "Processing..." : "Continue to Payment"}
       </button>
     </form>
-  ),
+  );
 }
 
 function StoryComponent() {
