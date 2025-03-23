@@ -89,6 +89,7 @@ function StoryComponent() {
     console.log("Form submitted with:", data);
   };
 
+
   return (
     <div className="max-w-md mx-auto p-6 space-y-8">
       <div className="space-y-4">
@@ -104,3 +105,5 @@ function StoryComponent() {
   );
 });
 }
+
+export default StoryComponent;
