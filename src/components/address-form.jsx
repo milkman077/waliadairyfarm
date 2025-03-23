@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function MainComponent({ onSubmit, loading }) {
   return (
@@ -79,6 +78,7 @@ function MainComponent({ onSubmit, loading }) {
 }
 
 function StoryComponent() {
+  // Make sure useState is correctly imported
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
@@ -109,5 +109,5 @@ function StoryComponent() {
   );
 }
 
-// Export StoryComponent (the default export)
+// Export the StoryComponent (which uses useState) as default
 export default StoryComponent;
