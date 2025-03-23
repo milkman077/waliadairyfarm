@@ -1,3 +1,4 @@
+// Import React and useState at the top of the file
 import React, { useState } from 'react';
 
 function MainComponent({ onSubmit, loading }) {
