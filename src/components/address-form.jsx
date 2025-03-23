@@ -1,10 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
-
-
-export default function Index() {
-  return (function MainComponent({ onSubmit, loading }) {
+function MainComponent({ onSubmit, loading }) {
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div>
@@ -82,28 +79,34 @@ export default function Index() {
 }
 
 function StoryComponent() {
-  const handleSubmit = ',' => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    console.log("Form submitted with:", data);
-  };
+  const [loading, setLoading] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // Simulate a form submission process
+    setTimeout(() => {
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      console.log("Form submitted with:", data);
+      setLoading(false); // Reset loading after form submission is done
+    }, 2000); // Simulate network delay
+  };
 
   return (
     <div className="max-w-md mx-auto p-6 space-y-8">
       <div className="space-y-4">
         <h2 className="text-xl font-bold">Default State</h2>
-        <MainComponent onSubmit={handleSubmit} loading={false} />
+        <MainComponent onSubmit={handleSubmit} loading={loading} />
       </div>
 
       <div className="space-y-4">
         <h2 className="text-xl font-bold">Loading State</h2>
-        <MainComponent onSubmit={handleSubmit} loading={true} />
+        <MainComponent onSubmit={handleSubmit} loading={loading} />
       </div>
     </div>
   );
-});
 }
 
 export default StoryComponent;
