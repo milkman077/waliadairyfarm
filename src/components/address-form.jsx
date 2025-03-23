@@ -81,6 +81,7 @@ function MainComponent({ onSubmit, loading }) {
 function StoryComponent() {
   const [loading, setLoading] = useState(false);
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
